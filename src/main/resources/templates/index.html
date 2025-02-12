@@ -1,234 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EduConnect</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-     <!--header starts here-->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-primary shadow">
-        <div class="container">
-          <a class="navbar-brand" href="/index">
-            <img
-              src="images/letter-ec-logo-pro-file-pro-vector.jpg"
-              class="rounded-5"
-              alt="logo"
-              width="70"
-              height="60"
-            />
-            <span class="h4 text-white align-middle">EduConnect</span>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 me-4 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link text-white"
-                  aria-current="page"
-                  href="/index"
-                  >Home</a
-                >
-              </li>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle text-white ms-4"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  More
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">Online Batch Details</a>
-                  </li>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EduConnect</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">About Us</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Contact Us</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<style>
+		.card-img-top {
+		        width: 100%;
+		        height: 200px; /* Fixed height for images */
+		        object-fit: cover; /* Ensures the image fits well */
+		    }
 
-            <a class="btn btn-light ms-6" href="/login" role="button"
-              >Login</a
-            >
-            <a class="btn btn-light ms-4" href="/register" role="button"
-              >Register</a
-            >
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!--header ends here-->
-    
-    <!-- main content starts -->
-    <main class="container-fluid">
-        <!-- banner -->
-        <section>
-            <img src="images/banner.jpg" alt="Smart Programming Banner" class="object-fit-contain border-dark" width="100%" height="auto"/>
-        </section>
+		    .card {
+		        display: flex;
+		        flex-direction: column;
+		        justify-content: space-between;
+		        height: auto; /* Let the card height adjust based on content */
+		        max-width: 18rem; /* Set a consistent width */
+		        margin-bottom: 1rem; /* Add space between cards */
+		    }
 
-        <!-- content -->
-        <section class="container py-5 bg-light">
-            <h3 class="text-center mb-4"> Our Courses </h3>
+		    .card-body {
+		        flex-grow: 1; /* Allows the card body to take up remaining space */
+		    }
 
-            <!-- courses -->
-            <div class="row g-4">
-                <!-- one course card start -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Java</h5>
-                            <p class="card-text">
-                                This course contains core java concepts, interview preparation, case studies and 5
-                                projects
-                            </p>
-                            <p> <strong>Price :</strong> <del>Rs. 5999</del> <span class="bg-info p-1">Rs. 1999</span> </p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            Updated : 2 days ago
-                        </div>
-                    </div>
-                </div>
-                <!-- one course card ends -->
+		    .card-text {
+		        white-space: normal; /* Prevents text from truncating */
+		        overflow: visible; /* Ensures full visibility of text */
+		    }
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Java</h5>
-                            <p class="card-text">
-                                This course contains core java concepts, interview preparation, case studies and 5
-                                projects
-                            </p>
-                            <p> <strong>Price :</strong> <del>Rs. 5999</del> <span class="bg-info p-1">Rs. 1999</span> </p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            Updated : 2 days ago
-                        </div>
-                    </div>
-                </div>
+		    .card-footer {
+		        text-align: center;
+		        font-size: 0.9rem; /* Optional: Adjust footer font size */
+		    }
+	</style>
+</head>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Java</h5>
-                            <p class="card-text">
-                                This course contains core java concepts, interview preparation, case studies and 5
-                                projects
-                            </p>
-                            <p> <strong>Price :</strong> <del>Rs. 5999</del> <span class="bg-info p-1">Rs. 1999</span> </p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            Updated : 2 days ago
-                        </div>
-                    </div>
-                </div>
+<body>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Java</h5>
-                            <p class="card-text">
-                                This course contains core java concepts, interview preparation, case studies and 5
-                                projects
-                            </p>
-                            <p> <strong>Price :</strong> <del>Rs. 5999</del> <span class="bg-info p-1">Rs. 1999</span> </p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            Updated : 2 days ago
-                        </div>
-                    </div>
-                </div>
+	<!-- header starts -->
+	<div th:if="${sessionUser == null OR sessionUser == ''}">
+		<div th:replace="~{fragments/header :: crm-header}"></div>
+	</div>
+	<div th:unless="${sessionUser == null OR sessionUser == ''}">
+		<div th:replace="~{fragments/user-header :: u-header}"></div>
+	</div>
+	<!-- header ends -->
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Java</h5>
-                            <p class="card-text">
-                                This course contains core java concepts, interview preparation, case studies and 5
-                                projects
-                            </p>
-                            <p> <strong>Price :</strong> <del>Rs. 5999</del> <span class="bg-info p-1">Rs. 1999</span> </p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            Updated : 2 days ago
-                        </div>
-                    </div>
-                </div>
+	<!-- main content starts -->
+	<main class="container-fluid">
+		<!-- banner -->
+		<section>
+			<img src="images/banner.jpg" alt="Banner" width="100%" />
+		</section>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Java</h5>
-                            <p class="card-text">
-                                This course contains core java concepts, interview preparation, case studies and 5
-                                projects
-                            </p>
-                            <p> <strong>Price :</strong> <del>Rs. 5999</del> <span class="bg-info p-1">Rs. 1999</span> </p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            Updated : 2 days ago
-                        </div>
-                    </div>
-                </div>
+		<!-- content -->
+		<section class="container py-5 bg-light">
+			<h3 class="text-center mb-4"> Our Courses </h3>
 
-            </div>
-        </section>
-    </main>
-    <!-- main content ends -->
+			<!-- courses div start -->
+			<div class="row g-4">
 
-    <!-- footer starts -->
-    <footer class="footer bg-dark py-3 text-center">
-        <div class="container">
-            <span class="text-white"> @Copyright EduConnect </span>
-            <div class="py-3">
-                <a href="#" class="ms-3 text-decoration-none"> Privacy Policy </a>
-                <a href="#" class="ms-3 text-decoration-none"> Terms of Services </a>
-                <a href="#" class="ms-3 text-decoration-none"> Cancellation / Refund Policy </a>
-            </div>
-        </div>
-    </footer>
-    <!-- footer ends -->
+				<!-- one course card start -->
+				<div th:each="course : ${coursesList}" class="col-lg-3 col-md-6">
+					<div class="card">
+						<img th:src="@{${course.imageUrl}}" class="card-img-top" alt="Course Image">
+						<div class="card-body">
+							<h5 class="card-title"><span th:text="${course.name}"></span></h5>
+							<p class="card-text">
+								<span th:text="${course.description}"></span>
+							</p>
+							<p> <strong>Price :</strong> <del>Rs. <span th:text="${course.originalPrice}"></span></del>
+								<span class="bg-info p-1">Rs. <span th:text="${course.discountedPrice}"></span></span>
+							</p>
+							<div th:if="${sessionUser == null OR sessionUser == ''}">
+								<a href="login" class="btn btn-outline-primary">Login to Buy</a>
+							</div>
+							<div th:unless="${sessionUser == null OR sessionUser == ''}">
+								<button class="btn btn-primary" th:data-cname="${course.name}"
+									th:data-camount="${course.discountedPrice}" th:data-uname="${sessionUser.name}"
+									th:data-uemail="${sessionUser.email}" th:data-uphoneno="${sessionUser.phoneno}"
+									onclick="purchaseCourse(this.getAttribute('data-cname'), this.getAttribute('data-camount'), this.getAttribute('data-uname'), this.getAttribute('data-uemail'), this.getAttribute('data-uphoneno'))">
+									Buy
+								</button>
+							</div>
+						</div>
+						<div class="card-footer text-body-secondary">
+							Updated: <span th:text="${course.updatedOn}"></span>
+						</div>
+					</div>
+				</div>
+				<!-- one course card ends -->
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+			</div>
+			<!-- courses div end -->
+		</section>
+	</main>
+	<!-- main content ends -->
+
+	<!-- footer starts -->
+	<div th:replace="~{fragments/footer :: crm-footer}"></div>
+	<!-- footer ends -->
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	<script>
+		function purchaseCourse(courseName, courseAmount, uname, uemail, uphoneno) {
+			var options = {
+				"key": "rzp_test_6JqCb8KLz026s9",
+				"amount": courseAmount * 100,
+				"currency": "INR",
+				"name": "EduConnect",
+				"description": "Course Transaction",
+				"image": "https://www.dreamstime.com/letter-e-c-ec-logo-design-template-minimal-monogram-initial-based-logotype-trendy-company-identity-image303612974",
+				"handler": function (response) {
+					console.log(response);
+					alert("Payment Successful");
+
+					var requestData = {
+						courseName: courseName,
+						courseAmount: courseAmount,
+						userEmail: uemail,
+						dateOfPurchase: new Date().toLocaleString(),
+						rzpPaymentId: response.razorpay_payment_id
+					};
+
+					$.ajax({
+						type: "POST",
+						url: "/api/storeOrderDetails",
+						contentType: "application/json",
+						data: JSON.stringify(requestData),
+						success: function (response) {
+							console.log("data stored successfully", response);
+							alert("Congrats!, course has been provided, Thank you");
+							window.location.href = '/myCourses';
+						},
+						error: function (error) {
+							console.log("Error : " + error);
+							alert("Some error occured : " + error);
+						}
+					});
+				},
+				"prefill": {
+					"name": uname,
+					"email": uemail,
+					"contact": uphoneno
+				},
+				"notes": {
+					"courseName": courseName
+				},
+				"theme": {
+					"color": "#3399cc"
+				}
+			};
+
+			var rzp1 = new Razorpay(options);
+
+			rzp1.on('payment.failed', function (response) {
+				console.log(response);
+				alert("Error : " + response);
+			});
+
+			rzp1.open();
+		}
+	</script>
+
+</body>
+
 </html>
